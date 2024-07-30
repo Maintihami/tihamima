@@ -1,93 +1,124 @@
 # UR5 pseudo load
 
 
+## Project Overview
 
-## Getting started
+This project aims to control a robotic system using real-time data to conduct tests on bone samples as part of orthopedic studies. The system consists of two main components:
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- **Program on the Robot's Polyscope Interface**: This program is responsible for executing the robot's movements based on received commands and processed data.
+- **Control and Data Acquisition Program on PC**: Running on a computer, this program collects data from force-torque sensors and adjusts the robot's trajectory in real-time in response to detected forces.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+The system enables the simulation of pseudo-static loads on the samples, based on user-defined inputs such as velocity vectors and force thresholds. The collected data are crucial for analyzing the mechanical responses of bones under various load conditions, which is vital for orthopedic research.
 
-## Add your files
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## System Requirements
 
-```
-cd existing_repo
-git remote add origin https://gitlab.ensta-bretagne.fr/tihamima/ur5-pseudo-load.git
-git branch -M main
-git push -uf origin main
-```
+- **Operating System**: The AMTI libraries used in this project are compatible with **Windows**. It is recommended to run this program on a Windows machine for full compatibility and functionality.
 
-## Integrate with your tools
+- **Virtual Machine**: While it's possible to run the program on a non-Windows system using a virtual machine (VM) configured with Windows, please note that this setup has not been tested. As such, we cannot guarantee full functionality or support for issues that may arise in a virtual machine environment.
 
-- [ ] [Set up project integrations](https://gitlab.ensta-bretagne.fr/tihamima/ur5-pseudo-load/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+### Prerequisites
+
+1. **Python 3.x**: Ensure Python is installed on your system.
+2. **Libraries**: Required Python libraries include ctypes, matplotlib, numpy, os, sys, and logging. Install them using:
+```sh
+pip install matplotlib numpy
+```
+3. **Hardware**: The transducer AMTI MC3A and its Gen5 amplifier, and a the UR5e robot 
+
+
+### Setup Steps
+
+1. Clone this repository to your local directory:
+```sh
+git clone https://gitlab.ensta-bretagne.fr/tihamima/ur5-pseudo-load.git
+cd ur5-pseudo-load
+```
+2. Install the required libraries (see above).
+
+## Project Directory Structure
+
+The project directory is organized as follows to facilitate ease of navigation and clarity of purpose:
+
+- **dataRT/**
+  - **config/**: Contains configuration files, such as control loop parameters and system settings.
+  - **docs/**: Documentation and product Manuals, software and drivers.
+  - **interpreter/**: Code for interpreting data or scripts necessary for initial data handling.
+  - **lib/**: Library files, including external libraries required by the project.
+  - **misc/**: Includes the `__pycache__` directory, which contains compiled Python files to improve loading times.
+  - **output/**: Output files generated by the program, including logs, and data visualizations.
+  - **rtde/**: Real-Time Data Exchange files and scripts related to communication with the UR5 robot.
+  - **src/**: Source code for the main functionality of the project, including scripts for data collection and robot control.
+
+Each directory is organized to maintain a clear separation of different aspects of the project, making it easier to manage and navigate.
+
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+1. **Power On the Robot**: Ensure that the robot is powered on.
+2. **Mount the trasducer**
+-Attach the 7615 cable from the platform to the transducer input port.
+- Make sure the power switch is set to the off position. Plug the power supply into the Gen 5 and
+then into the power source.
+- Attach the USB cable from the Gen 5 to the PC.
+3. **Connect the robot to your PC**: use an Ethernet cable.
+4. **Load the Program on Polyscope**:
+Navigate to the spine testing folder on the Polyscope interface.
+Select the `spine_testing.urp` file and click to load it.
+The robot may restart. If it does, click `Restart` on the Polyscope interface to resume.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+5. **Running the Program on PC**
+Run the Python Program: On your PC, open a Python environment.
+Navigate to dataRT/src and execute:
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+```sh
+python spine_rtde_one_go.py
+```
+or 
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+```sh
+python spine_rtde_step_by_step.py
+```
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## Contributions and Collaboration
+
+This repository is publicly accessible to share our work and findings with the community. However, as it is used in a controlled laboratory environment, it is important to maintain its integrity.
+
+
+### How to Contribute
+
+If you are interested in contributing or suggesting changes:
+1. **Fork the Repository**: You can fork this repository to your own GitLab account.
+2. **Make Your Changes**: Implement any changes or additions in your forked repository.
+3. **Submit a Merge Request**: Propose your changes by submitting a merge request. Please provide a clear description of your changes and their purpose.
+
+All contributions will be reviewed by the Orthopedic Biomechanics Research Laboratory (OBRL) at Colorado State University (CSU) or by the project lead. We value collaboration and suggestions, but please note that any modifications must be discussed and approved before being merged.
+
+### Contact Information
+
+- **Orthopedic Biomechanics Research Laboratory (OBRL), CSU**: [OBRL contact information or email]
+- **Project Lead**: [Main Tihami Ouazzani] - [main.tihami2001@gmail.com]
+
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is an open source
+
+
+## Contact
+
+For questions or suggestions, please contact [main.tihami2001@gmail.com]
+
+
+## Badges
+
+On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+
+
+## Visuals
+
+Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.

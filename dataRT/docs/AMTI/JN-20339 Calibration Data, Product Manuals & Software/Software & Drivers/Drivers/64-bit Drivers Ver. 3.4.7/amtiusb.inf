@@ -1,0 +1,129 @@
+
+Installation INF for the Cypress Generic USB Driver for Windows Server 2003
+; Processor support for OS unknown platforms.
+;
+; (c) Copyright 2011 Cypress Semiconductor Corporation
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+provider=%AMTIUSB_Provider%
+CatalogFile=AMTIUSB.cat
+DriverVer=12/01/2011,3.4.5.000
+
+[SourceDisksNames]
+1=%AMTIUSB_Install%,,,
+
+[SourceDisksFiles]
+AMTIUSB.sys = 1
+
+[DestinationDirs]
+AMTIUSB.Files.Ext = 10,System32\Drivers
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[Manufacturer]
+%AMTIUSB_Provider%=Device,NT,NTx86,NTamd64
+
+;for all platforms
+[Device]
+%VID_1F6D&PID_012C.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_012C
+%VID_1F6D&PID_00C8.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_00C8
+
+;for windows 2000 non intel platforms
+[Device.NT]
+%VID_1F6D&PID_012C.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_012C
+%VID_1F6D&PID_00C8.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_00C8
+
+;for x86 platforms
+[Device.NTx86]
+%VID_1F6D&PID_012C.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_012C
+%VID_1F6D&PID_00C8.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_00C8
+
+
+;for x64 platforms
+[Device.NTamd64]
+%VID_1F6D&PID_012C.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_012C
+%VID_1F6D&PID_00C8.DeviceDesc%=AMTIUsb, USB\VID_1F6D&PID_00C8
+
+[AMTIUSB]
+CopyFiles=AMTIUSB.Files.Ext
+AddReg=AMTIUsb.AddReg
+
+[AMTIUSB.HW]
+AddReg=AMTIUSB.AddReg.Guid
+
+[AMTIUSB.Services]
+Addservice = AMTIUSB,2,AMTIUSB.AddService
+
+[AMTIUSB.NT]
+CopyFiles=AMTIUSB.Files.Ext
+AddReg=AMTIUsb.AddReg
+
+[AMTIUSB.NT.HW]
+AddReg=AMTIUSB.AddReg.Guid
+
+[AMTIUSB.NT.Services]
+Addservice = AMTIUSB,2,AMTIUSB.AddService
+
+
+[AMTIUSB.NTx86]
+CopyFiles=AMTIUSB.Files.Ext
+AddReg=AMTIUsb.AddReg
+
+[AMTIUSB.NTx86.HW]
+AddReg=AMTIUSB.AddReg.Guid
+
+[AMTIUSB.NTx86.Services]
+Addservice = AMTIUSB,2,AMTIUSB.AddService
+
+[AMTIUSB.NTamd64]
+CopyFiles=AMTIUSB.Files.Ext
+AddReg=AMTIUsb.AddReg
+
+[AMTIUSB.NTamd64.HW]
+AddReg=AMTIUSB.AddReg.Guid
+
+[AMTIUSB.NTamd64.Services]
+Addservice = AMTIUSB,2,AMTIUSB.AddService
+
+
+[AMTIUSB.AddReg]
+; Deprecating - do not use in new apps to identify a CYUSB driver
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,AMTIUSB.sys
+; You may optionally include a check for DriverBase in your application to check for a CYUSB driver
+HKR,,DriverBase,,AMTIUSB.sys
+HKR,"Parameters","MaximumTransferSize",0x10001,4096
+HKR,"Parameters","DebugLevel",0x10001,2
+HKR,,FriendlyName,,%AMTIUSB_Description%
+
+[AMTIUSB.AddService]
+DisplayName    = %AMTIUSB_Description%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\AMTIUSB.sys
+AddReg         = AMTIUSB.AddReg
+LoadOrderGroup = Base
+
+[AMTIUSB.Files.Ext]
+AMTIUSB.sys
+
+[AMTIUSB.AddReg.Guid]
+HKR,,DriverGUID,,%AMTIUSB.GUID%
+
+[Strings]
+AMTIUSB_Provider    = "AMTI"
+AMTIUSB_Company     = "AMTI"
+AMTIUSB_Description = "AMTI Generic USB Driver"
+AMTIUSB_DisplayName = "AMTI USB Generic"
+AMTIUSB_Install     = "AMTI USB Driver Installation Disk"
+
+VID_1F6D&PID_012C.DeviceDesc="OPT-SC 3.4.7"
+VID_1F6D&PID_00C8.DeviceDesc="GEN5 3.4.7" 
+AMTIUSB.GUID="{0FCA172A-CA22-465f-8909-52B771767E88}"
+AMTIUSB_Unused      = "."

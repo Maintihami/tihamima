@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<rtde_config>
+	<recipe key="state">
+		<field name="output_int_register_0" type="INT32"/>
+	</recipe>
+
+	<recipe key="Vspeed">
+		<field name="input_double_register_0" type="DOUBLE"/>
+		<field name="input_double_register_1" type="DOUBLE"/>
+		<field name="input_double_register_2" type="DOUBLE"/>
+		<field name="input_double_register_3" type="DOUBLE"/>
+		<field name="input_double_register_4" type="DOUBLE"/>
+		<field name="input_double_register_5" type="DOUBLE"/>
+	</recipe>
+
+	<recipe key="servoing">
+		<field name="input_int_register_0" type="INT32"/>
+	</recipe>
+</rtde_config>

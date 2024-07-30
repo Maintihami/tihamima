@@ -1,0 +1,253 @@
+Step: 100
+	Welcome to AMTI's NetForce application designed to interface with AMTI's multiaxis
+force and moment measurement dynamometers.  
+
+	This program will lead you through a series of first time installation procedures
+to setup the NetForce program.  Later on you may change any of these settings using the 
+various options on the main screen of the NetForce program.
+
+	During the following steps various dialog boxes will be displayed on the screen overlaying
+these instructions.  If the dialog box covers the instructions you may move it by pressing the
+left mouse button over the blue bar on the top of the dialog box.  You may then drag the dialog
+box out of the way to read the instructions.
+
+Step: 101
+	This program was designed to perform optimally with a Display Mode of 800 x 600.  We 
+recommend that you set your monitor to that resolution before proceeding.  You may select No
+now and make that setting and restart this program later.
+
+Step: 200
+	NetForce supports both biomechanics and industrial (test and measurement) applications.
+Some options for the one are inappropriate for the other.  If your application is primarily
+biomechanics (i.e. gait or balance or other human or animal subject oriented testing) then 
+please respond YES to this message box.  If your application industrial (test or measurement)
+then please respond NO.
+
+Step: 300
+	Please select the hardware configuration that corresponds to the hardware that you have
+installed and will be using with the NetForce software.  You may change the hardware
+configuration at a later date from the setup option of the main menu of the program
+if you so chose.
+
+Step: 310
+	You have chosen: "AccuGait Serial (using RS-232  )"
+
+	This step will install the necessary calibration information for your platform.
+	
+ A) Insert the Calibration diskette delivered with your platform in the A drive.
+ B) Chose the Add Platform button.
+ C) A File Open dialog box will be displayed.
+ D) Navigate to the A drive.
+ E) Select the file named xxxx.acl, where xxxx corresponds to the serial number of your platform.
+ F) Press the Open button.
+ G) Select the Port button.
+ H) The COM Port selector dialog box will be displayed.
+ I) Select the COM port that corresponds to the port to which you will be connecting your platform.
+ J) Press Done.
+ K) Now you are back to the main dialog box, press the Done button.
+ L) A message will be displayed; "Save Changes ?".
+ M) Press Yes.
+
+Serial Port Note:
+	The serial interface uses an RS-232 connector usually located on the back of the computer.
+Most computers have either 1 or 2 serial ports which are hopefully labeled COM1 and COM2.  You 
+must plug your serial port cable (i.e. the cable terminated with a 9 pin D shell connector)
+into either COM1 or COM2.  Please make note of which serial port you chose so it can be entered
+in the dialog box. 
+
+Step: 320
+	You have chosen: "AccuSway Serial (using RS-232  )"
+
+	This step will install the necessary calibration information for your platform.
+	
+ A) Insert the Calibration diskette delivered with your platform in the A drive.
+ B) Chose the Add Platform button.
+ C) A File Open dialog box will be displayed.
+ D) Navigate to the A drive.
+ E) Select the file named xxxx.acl, where xxxx corresponds to the serial number of your platform.
+ F) Press the Open button.
+ G) Select the Port button.
+ H) The COM Port selector dialog box will be displayed.
+ I) Select the COM port that corresponds to the port to which you will be connecting your platform.
+ J) Press Done.
+ K) Now you are back to the main dialog box, press the Done button.
+ L) A message will be displayed; "Save Changes ?".
+ M) Press Yes.
+
+Serial Port Note:
+	The serial interface uses an RS-232 connector usually located on the back of the computer.
+Most computers have either 1 or 2 serial ports which are hopefully labeled COM1 and COM2.  You 
+must plug your serial port cable (i.e. the cable terminated with a 9 pin D shell connector)
+into either COM1 or COM2.  Please make note of which serial port you chose so it can be entered
+in the dialog box. 
+
+Step: 330
+	You have chosen: "DigiAmp Analog  (using DT-3002 or DT-3034)"
+
+		This step will install the necessary calibration information for your platform.
+	
+ A) Insert the Calibration diskette delivered with your platform in the A drive.
+ B) Chose the Add Platform button.
+ C) A File Open dialog box will be displayed.
+ D) Navigate to the A drive.
+ E) Select the file named xxxx.plt, where xxxx corresponds to the serial number of your platform.
+ F) Press the Open button.
+ G) Check the column labeled GVP.  These values should be set to correspond with the values
+		selected on the LCD Key pad menu of the DigiAmp.  
+ H) Press the Done button.
+ I) A message will be displayed; "Save Changes ?".
+ J) Press Yes.
+
+
+Step: 340
+	You have chosen: "DigiAmp E-net   (using Ethernet)"
+
+	This step will install the necessary calibration information for your platform.
+	
+ A) Insert the Calibration diskette delivered with your platform in the A drive.
+ B) Chose the Add Platform button.
+ C) A File Open dialog box will be displayed.
+ D) Navigate to the A drive.
+ E) Select the file named xxxx.plt, where xxxx corresponds to the serial number of your platform.
+ F) Press the Open button.
+ G) Press the Done button.
+ H) A message will be displayed; "Save Changes ?".
+ I) Press Yes.
+
+
+Step: 350
+	You have chosen: "MiniAmp Analog  (using DT-3002 or DT-3034)"
+
+	This step will install the necessary calibration information for your platform.
+	
+ A) Insert the Calibration diskette delivered with your platform in the A drive.
+ B) Chose the Add Platform button.
+ C) A File Open dialog box will be displayed.
+ D) Navigate to the A drive.
+ E) Select the file named xxxx.plt, where xxxx corresponds to the serial number of your platform.
+ F) Press the Open button.
+ G) Check the column labeled Amp Gain.  These values should be set to correspond with the values
+		delivered on your amplifier calibration sheet.  
+ H) Check the column labeled Ex Volts.  These values should be set to correspond with the values
+		delivered on your amplifier calibration sheet.  
+ I) Press the Done button.
+ J) A message will be displayed; "Save Changes ?".
+ K) Press Yes.
+
+
+Step: 360
+	You have chosen: "MiniAmp Serial  (using RS-232  )"
+
+	Please have on hand the following materials:
+
+	A) The calibration diskette delivered with your platform or transducer.
+	B) The calibration sheet delivered with your amplifier.
+
+	Please verify that your amplifier gains and excitation voltages have been set to
+set to the desired settings via the hardware jumpers provided.  Please refer to
+the MiniAmp hardware manual for additional information.  
+
+	Locate the calibrated gains and excitation voltage values on the calibration
+sheet that correspond to your hardware jumper settings.  These will be used in a 
+subsequent step.
+
+Step: 361
+	Please determine which serial port you will be using to communicate with the amplifier and
+make note of it.  This will be used in the next step.
+
+	The serial interface uses an RS-232 connector usually located on the back of the computer.
+Most computers have either 1 or 2 serial ports which are hopefully labeled COM1 and COM2.  You 
+must plug your serial port cable (i.e. the cable terminated with a 9 pin D shell connector)
+into either COM1 or COM2.  
+	
+
+Step: 362
+	This step will install the necessary calibration information for your platform.
+	
+ A) Insert the Calibration diskette delivered with your platform in the A drive.
+ B) Chose the Add Platform button.
+ C) A File Open dialog box will be displayed.
+ D) Navigate to the A drive.
+ E) Select the file named xxxx.plt, where xxxx corresponds to the serial number of your platform.
+ F) Press the Open button.
+ G) Now select the Port button.
+ H) The COM Port selector dialog box will be displayed.
+ I) Select the COM port that corresponds to the port to which you will be connecting your platform.
+ J) Press Done.
+ K) Now you are back to the main dialog box.
+ L) Check the column labeled Amp Gain.  These values should be set to correspond with the values
+		delivered on your amplifier calibration sheet.  
+ M) Check the column labeled Ex Volts.  These values should be set to correspond with the values
+		delivered on your amplifier calibration sheet.  
+ N) Press the Done button.
+ O) A message will be displayed; "Save Changes ?".
+ P) Press Yes.
+
+
+
+Gain and Excitation Note:
+	Please refer to your amplifier Hardware manual for instructions on how to set the amplifier
+gains and excitation voltages.  Each amplifier is delivered with a calibration sheet which documents
+the calibrated gains and voltages that should be entered here.
+
+Step: 370
+	You have chosen: "Other Analog    (using DT-3002 or DT-3034 )"
+
+
+
+Step: 400
+	You may now select an initial configuration file which will set up various display and data
+acquisition parameters.  We have provided four files for different applications.  All of the
+settings may be changed later using the various menus and options available in the NetForce
+program.
+
+	1) Industrial1000	-- Recommended for DigiAmp (all) and MiniAmp analog applications.
+	2) Industrial200	-- Recommended for MiniAmp Serial test and measurement applications.
+	3) Gait1000			-- Recommended for DigiAmp (all) and MiniAmp analog applications.
+	4) Gait200			-- Recommended for AccuGait applications.
+	5) Balance50		-- Recommended for AccuSway applications.
+
+
+Step: 500
+	This step allows you to setup regional specific information.  The region selection 
+applies only to the date format used to automatically generate date strings.  You must
+install the desired region using the Windows control panel first.  If you are in doubt
+select United States of America now and use the Region option in the setup menu later.
+
+	You may also chose between English and metric units at this time.  
+
+Step: 600
+	The data folder becomes the default in which both data files and the subject
+database will be maintained.  You may keep different studies in different folders
+but for now you should set up a single folder to get started.  You may later use 
+the Data Folder button in setup to make (and select) different folders.
+
+Using the Select data folder dialog box
+
+To select an existing folder:
+	1) Use the navigation controls to navigate to the desired folder.
+	2) Double click on the desired folder
+	3) The folder name will be displayed in the Look in: window.
+	4) Click Open
+	5) A message box will be displayed showing you the name of the selected folder.
+	6) Press "OK"
+
+To create a new folder
+	1) Use the navigation controls to navigate to the desired folder.
+	2) Click the New Folder icon on the tool bar (move mouse slowly over the icons to see the name)
+	3) A new folder icon will appear with the name "New Folder" to the right of the icon.
+	4) Type a name of your choice. (this will replace the name "New Folder")
+	5) Click on white space outside of the new folder name.
+	6) Wait until the new folder name is highlighted. (this takes a few seconds)
+	7) Select Open
+	8) Now your new folder name will appear in Look in:
+	9) Select Open
+	10) A message box will be displayed showing you the name of the selected folder.
+	11) Press "OK"
+
+Step: 700
+	After this step the program will be shut down to enable the new settings.  You may rerun
+the program by clicking on its icon at any time.
+
+
+

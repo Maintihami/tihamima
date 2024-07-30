@@ -1,0 +1,9 @@
+Type:Running Gait
+Type:Walking Gait
+Type:Closed Base
+Type:Open Base
+Type:Feet On Center
+Type:Right Foot
+Type:Left Foot
+SubType:Eyes Open
+SubType:Eyes Closed
