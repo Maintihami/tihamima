@@ -66,24 +66,38 @@ then into the power source.
 - Attach the USB cable from the Gen 5 to the PC.
 3. **Connect the robot to your PC**: use an Ethernet cable.
 4. **Load the Program on Polyscope**:
-Navigate to the spine testing folder on the Polyscope interface.
-Select the `spine_testing.urp` file and click to load it.
-The robot may restart. If it does, click `Restart` on the Polyscope interface to resume.
+Navigate to the new_folder_2 on the Polyscope interface.
+Select the `spine_testing.urp` file and click open to load it.
+The robot may restart. Then click play from beginning Robot Program
 
 5. **Running the Program on PC**
-Run the Python Program: On your PC, open a Python environment.
-Navigate to src and execute:
 
+Navigate to the Source Directory: Change to the src directory where the Python scripts are located.
+
+**Running the Complete Movement Sequence**
+To program all movements at the start, execute the following command:
 ```sh
 python spine_rtde_one_go.py
 ```
-or 
+This script initializes and sends the entire sequence of movements to the robot in one go. It sets up the necessary control parameters, ensuring that the robot executes the pre-defined path without further user intervention, except for emergency stops.
 
+**Dynamic Execution Mode**
+For a dynamic approach, where the robot requests the next movement after detecting that force limits have been exceeded, use:
 ```sh
 python spine_rtde_step_by_step.py
 ```
+This script operates in a step-by-step mode, allowing for real-time adjustments based on sensory feedback. After the robot exceeds the predefined force thresholds, it pauses and waits for the next movement command. This approach is useful for applications requiring adaptive responses to varying loads or unexpected conditions.
+
+Enter the Necessary Inputs: During execution, the program will prompt you for specific inputs, such as speed vectors or thresholds. Provide these inputs as required to ensure the robot operates under the correct parameters.
+
+6. **Running the program on the polyscope** run program from start
 
 
+## Demo Video
+
+Here is a video demonstration of the project in action:
+
+<iframe width="560" height="315" src=https://youtu.be/swfLqq4LzLc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ## Contributions and Collaboration
 
 This repository is publicly accessible to share our work and findings with the community. However, as it is used in a controlled laboratory environment, it is important to maintain its integrity.
@@ -113,12 +127,3 @@ This project is an open source
 
 For questions or suggestions, please contact [main.tihami2001@gmail.com]
 
-
-## Badges
-
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-
-## Visuals
-
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.

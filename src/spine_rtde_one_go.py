@@ -5,15 +5,16 @@ import numpy as np
 import os
 import sys
 import logging
-"""the program collects data from the force torque sensor and change the trajectory of the robot when the force limits are exceeded"""
-"""the program gives the user the possibility to select the forces to monitor and the thresholds in the tool frame"""
-"""many forces can be monitored at the same time with different thresholds and logic operators"""
-"""the program gives the user the possiblity to specify the speed vector in the base frame that dictate the trajectory of the robot"""
-"""the program gives the user the possibility to change the trajectory of the robot when the force limits are exceeded"""
-"""the frame is the tool frame"""
-"""Does reinitialize the F/T lists after the force limits are exceeded"""
-"""manage the negtive limits"""
-"""the program collects all necessary inputs in one go (at the beginning) and then operates based on those inputs. It is concise and accurately reflects the batch input method."""
+
+# This script initializes and sends the entire sequence of movements to the robot in one execution.
+# It sets up the necessary control parameters, ensuring that the robot follows the pre-defined path
+# without requiring further user intervention, except in cases of emergency stops or adjustments.
+
+# The forces to monitor and their corresponding thresholds are specified in the tool frame.
+# Multiple forces can be monitored simultaneously, each with distinct thresholds and logic operators.
+# The program allows the user to specify the speed vector in the base frame, which dictates the trajectory of the robot.
+# The frame of reference for these operations is the tool frame.
+
 """-----------------------------sensor initialization-----------------------------------"""
 # Function to convert the force from the sensor frame to the tool frame
 def rotation(force):
@@ -26,7 +27,7 @@ def rotation(force):
     return forces
 
 # Relative path starting from the directory where your Python script is located
-relative_path = r"../lib/AMTIUSBDevice - 64.dll"
+relative_path = r"../lib/Sensor/AMTIUSBDevice - 64.dll"
 
 
 # Construct the absolute path
@@ -173,9 +174,10 @@ output_file_path = os.path.join(output_path, "output.txt")
 """-----------------------------control parameters-----------------------------------"""
 
 # Add the parent directory of src to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../lib')))
 # Add the rtde directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../rtde')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../lib/rtde')))
+
 import rtde.rtde as rtde
 import rtde.rtde_config as rtde_config
 import socket
